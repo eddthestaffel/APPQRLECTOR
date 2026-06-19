@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APPQRLECTOR.Views.HomeView"
+             Title="HomeView">
+    <VerticalStackLayout Padding="30" Spacing="20">
+
+        <Label Text="APP QR LECTOR"
+               FontSize="30"
+               HorizontalOptions="Center"/>
+
+        <Label Text="Selecciona una opción"
+               FontSize="18"
+               HorizontalOptions="Center"/>
+
+        <Button Text="Escanear QR"
+                Clicked="OnScanClicked"/>
+
+        <Button Text="Ver Historial"
+                Clicked="OnHistoryClicked"/>
+
+        <Button Text="Cerrar sesión"
+                Clicked="OnLogoutClicked"/>
+    </VerticalStackLayout>
+</ContentPage>
