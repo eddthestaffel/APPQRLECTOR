@@ -7,14 +7,14 @@ public partial class HomeView : ContentPage
 		InitializeComponent();
 	}
 
-	private void OnScanClicked(object sender, EventArgs e)
+    private async void OnScanClicked(object sender, EventArgs e)
     {
-        Application.Current.MainPage = new AppShell();
-        Shell.Current.GoToAsync("//ScanView");
+        await Navigation.PushAsync(new ScanView());
     }
-    private void OnHistoryClicked(object sender, EventArgs e)
+
+    private async void OnHistoryClicked(object sender, EventArgs e)
     {
-        Shell.Current.GoToAsync("//HistoryView");
+        await Navigation.PushAsync(new HistoryView());
     }
 
     private void OnLogoutClicked(object sender, EventArgs e)

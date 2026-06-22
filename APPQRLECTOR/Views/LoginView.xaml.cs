@@ -1,4 +1,5 @@
 namespace APPQRLECTOR.Views;
+using APPQRLECTOR.Views;
 
 public partial class LoginView : ContentPage
 {
@@ -14,7 +15,7 @@ public partial class LoginView : ContentPage
 
         if (user == "admin" && pass == "1234")
         {
-            Application.Current.MainPage = new AppShell();
+            Application.Current.MainPage = new NavigationPage(new HomeView());
         }
         else
         {
