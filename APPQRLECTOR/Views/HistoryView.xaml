@@ -3,13 +3,28 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="APPQRLECTOR.Views.HistoryView"
              Title="Historial">
-    <VerticalStackLayout Padding="30">
 
-        <Label Text="Historial"
-               FontSize="28"
+    <VerticalStackLayout Padding="20">
+
+        <Label Text="Historial de escaneos"
+               FontSize="24"
                HorizontalOptions="Center"/>
 
-        <Label Text="Aquí aparecerán los QR escaneados"
-               HorizontalOptions="Center"/>
+        <Button Text="Limpiar Historial"
+                Clicked="OnClearClicked"/>  
+
+        <CollectionView x:Name="historyCollection">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Margin="5">
+                        <VerticalStackLayout>
+                            <Label Text="{Binding Content}" TextColor="Black"/>
+                            <Label Text="{Binding ScanDate, StringFormat='Fecha: {0:dd/MM/yyyy HH:mm}'}"
+       TextColor="Black"/>
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </VerticalStackLayout>
 </ContentPage>
