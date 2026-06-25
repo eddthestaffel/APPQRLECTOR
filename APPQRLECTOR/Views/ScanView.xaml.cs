@@ -3,6 +3,7 @@ namespace APPQRLECTOR.Views;
 using APPQRLECTOR.Models;
 using APPQRLECTOR.Services;
 using System.Linq;
+using Microsoft.Maui.ApplicationModel;
 
 public partial class ScanView : ContentPage
 {
@@ -21,6 +22,11 @@ public partial class ScanView : ContentPage
         MainThread.BeginInvokeOnMainThread(() =>
         {
             lblResult.Text = result.Value;
+
+            if (Uri.TryCreate(result.Value, UriKind.Absolute, out var uri))
+            {
+                Launcher.Default.OpenAsync(uri);
+            }
 
             var last = HistoryService.Records.LastOrDefault();
 

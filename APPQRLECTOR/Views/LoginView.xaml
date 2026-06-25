@@ -1,22 +1,60 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="False"
              x:Class="APPQRLECTOR.Views.LoginView"
-             Title="Iniciar Sesión">
-    <VerticalStackLayout>
-        <Label Text="LOGIN"
-               FontSize="28"
-               HorizontalOptions="Center"/>
+             Title="Iniciar Sesión"
+             BackgroundColor="{StaticResource AppBackground}">
 
-        <Entry x:Name="txtUser" Placeholder="Usuario"/>
+    <ScrollView>
 
-        <Entry x:Name="txtPass" Placeholder="Contraseña" IsPassword="True"/>
+        <VerticalStackLayout
+            Padding="30"
+            Spacing="15"
+            VerticalOptions="Center">
 
-        <Button Text="Ingresar"
-                Clicked="OnLoginClicked"/>
+            <Label Text="APP QR LECTOR"
+                   FontSize="32"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="{StaticResource PrimaryBlue}"/>
 
-        <Label x:Name="lblError"
-               TextColor="Red"
-               IsVisible="False"/>
-    </VerticalStackLayout>
+            <Label Text="Registro de asistencia mediante QR"
+                   HorizontalOptions="Center"
+                   TextColor="{StaticResource TextGray}"/>
+
+            <Frame BackgroundColor="{StaticResource CardBackground}"
+                   Padding="20">
+
+                <VerticalStackLayout Spacing="15">
+
+                    <Entry x:Name="txtUser"
+                           Placeholder="Usuario"
+                           TextColor="White"
+                           PlaceholderColor="Gray"/>
+
+                    <Entry x:Name="txtPass"
+                           Placeholder="Contraseña"
+                           IsPassword="True"
+                           TextColor="White"
+                           PlaceholderColor="Gray"/>
+
+                    <Button Text="Iniciar sesión"
+                            Clicked="OnLoginClicked"
+                            HeightRequest="55"
+                            BackgroundColor="{StaticResource PrimaryBlue}"
+                            TextColor="White"/>
+
+                    <Label x:Name="lblError"
+                           TextColor="Red"
+                           IsVisible="False"/>
+
+                </VerticalStackLayout>
+
+            </Frame>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
 </ContentPage>

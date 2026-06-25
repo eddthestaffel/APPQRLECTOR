@@ -8,14 +8,14 @@ public partial class LoginView : ContentPage
 		InitializeComponent();
 	}
 
-    private void OnLoginClicked(object sender, EventArgs e)
+    private async void OnLoginClicked(object sender, EventArgs e)
     {
         string user = txtUser.Text;
         string pass = txtPass.Text;
 
         if (user == "admin" && pass == "1234")
         {
-            Application.Current.MainPage = new NavigationPage(new HomeView());
+            await Navigation.PushAsync(new HomeView());
         }
         else
         {

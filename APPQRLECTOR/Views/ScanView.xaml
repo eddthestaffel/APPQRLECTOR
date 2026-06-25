@@ -2,22 +2,57 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.Maui.Controls"
+             NavigationPage.HasNavigationBar="False"
              x:Class="APPQRLECTOR.Views.ScanView"
-             Title="Escáner QR">
-    
-    <VerticalStackLayout Padding="20">
+             Title="Escáner QR"
+             BackgroundColor="{StaticResource AppBackground}">
 
-        <Label Text="Escáner QR"
-               FontSize="24"
-               HorizontalOptions="Center"/>
+    <ScrollView>
 
-        <zxing:CameraBarcodeReaderView
-            x:Name="cameraView"
-            HeightRequest="300"
-            BarcodesDetected="CameraView_BarcodesDetected"/>
+        <VerticalStackLayout
+            Padding="20"
+            Spacing="20">
 
-        <Label x:Name="lblResult"
-               Text="Esperando QR..."
-               FontSize="18"/>
-    </VerticalStackLayout>
+            <Label Text="ESCÁNER QR"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="{StaticResource PrimaryBlue}"/>
+
+            <Label Text="Apunte la cámara al código QR"
+                   HorizontalOptions="Center"
+                   TextColor="{StaticResource TextGray}"/>
+
+            <Frame BackgroundColor="{StaticResource CardBackground}"
+                   Padding="10">
+
+                <zxing:CameraBarcodeReaderView
+                    x:Name="cameraView"
+                    HeightRequest="350"
+                    BarcodesDetected="CameraView_BarcodesDetected"/>
+
+            </Frame>
+
+            <Frame BackgroundColor="{StaticResource CardBackground}"
+                   Padding="15">
+
+                <VerticalStackLayout>
+
+                    <Label Text="Resultado"
+                           FontAttributes="Bold"
+                           TextColor="{StaticResource PrimaryBlue}"/>
+
+                    <Label x:Name="lblResult"
+                           Text="Esperando QR..."
+                           FontSize="16"
+                           TextColor="{StaticResource TextWhite}"/>
+
+                </VerticalStackLayout>
+
+            </Frame>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
 </ContentPage>

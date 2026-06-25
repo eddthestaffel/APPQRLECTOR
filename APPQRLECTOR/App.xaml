@@ -9,6 +9,13 @@
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
+
+            <Color x:Key="AppBackground">#0F172A</Color>
+            <Color x:Key="CardBackground">#1E293B</Color>
+            <Color x:Key="PrimaryBlue">#38BDF8</Color>
+            <Color x:Key="TextWhite">#FFFFFF</Color>
+            <Color x:Key="TextGray">#CBD5E1</Color>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

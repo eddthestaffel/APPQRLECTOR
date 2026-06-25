@@ -1,25 +1,44 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="False"
              x:Class="APPQRLECTOR.Views.HomeView"
-             Title="Inicio">
-    <VerticalStackLayout Padding="30" Spacing="20">
+             Title="Inicio"
+             BackgroundColor="{StaticResource AppBackground}">
+
+    <VerticalStackLayout
+        Padding="30"
+        Spacing="20">
 
         <Label Text="APP QR LECTOR"
-               FontSize="30"
-               HorizontalOptions="Center"/>
+               FontSize="32"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="{StaticResource PrimaryBlue}"/>
 
-        <Label Text="Selecciona una opción"
+        <Label Text="Seleccione una opción"
                FontSize="18"
-               HorizontalOptions="Center"/>
+               HorizontalOptions="Center"
+               TextColor="{StaticResource TextGray}"/>
 
-        <Button Text="Escanear QR"
-                Clicked="OnScanClicked"/>
+        <Button Text="Escanear codigo QR"
+                HeightRequest="65"
+                Clicked="OnScanClicked"
+                BackgroundColor="{StaticResource PrimaryBlue}"
+                TextColor="White"/>
 
-        <Button Text="Ver Historial"
-                Clicked="OnHistoryClicked"/>
+        <Button Text="Ver historial de escaneos"
+                HeightRequest="65"
+                Clicked="OnHistoryClicked"
+                BackgroundColor="{StaticResource PrimaryBlue}"
+                TextColor="White"/>
 
         <Button Text="Cerrar sesión"
-                Clicked="OnLogoutClicked"/>
+                HeightRequest="65"
+                Clicked="OnLogoutClicked"
+                BackgroundColor="{StaticResource PrimaryBlue}"
+                TextColor="White"/>
+
     </VerticalStackLayout>
+
 </ContentPage>

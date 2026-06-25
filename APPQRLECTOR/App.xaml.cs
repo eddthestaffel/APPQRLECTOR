@@ -12,6 +12,11 @@ namespace APPQRLECTOR
 
         protected override Window CreateWindow(IActivationState? activationState)
         {
+            var navPage = new NavigationPage(new LoginView())
+            {
+                BarBackground = Color.FromArgb("#0F172A"),
+                BackgroundColor = Color.FromArgb("#0F172A")
+            };
             return new Window(new NavigationPage(new LoginView()));
         }
     }

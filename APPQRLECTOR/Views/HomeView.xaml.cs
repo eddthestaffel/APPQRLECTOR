@@ -19,6 +19,6 @@ public partial class HomeView : ContentPage
 
     private void OnLogoutClicked(object sender, EventArgs e)
     {
-        Application.Current.MainPage = new NavigationPage(new LoginView());
+        Navigation.PopToRootAsync();
     }
 }
